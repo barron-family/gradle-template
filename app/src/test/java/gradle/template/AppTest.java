@@ -17,12 +17,27 @@ class AppTest {
     }
 
     @Test
-    void successfulTest() {
+    void test1() {
         assertEquals(3,classUnderTest.sum(1, 2));
     }
 
     @Test
-    void failedTest() {
-        assertNotEquals(0, classUnderTest.sum(1, 2));
+    void test2() {
+        assertEquals(4,classUnderTest.sum(2, 2));
+    }
+
+    @Test
+    void test3() {
+        assertEquals(3,classUnderTest.sum(0, 3));
+    }
+
+    @Test
+    void test4() {
+        assertEquals(2,classUnderTest.sum(4, -2));
+    }
+
+    @Test
+    void test5() {
+        assertEquals(0,classUnderTest.sum(0, 0));
     }
 }
