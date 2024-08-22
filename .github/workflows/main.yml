@@ -1,0 +1,21 @@
+on:
+  push:
+permissions:
+  contents: read
+  actions: read
+  checks: write
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4     # checkout the repo
+      - run: gradle test              # run tests
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: JUnit Tests            # Name of the check run which will be created
+          path: app/build/reports/tests/test/index.html    # Path to test results
+          reporter: java-junit        # Format of test results
