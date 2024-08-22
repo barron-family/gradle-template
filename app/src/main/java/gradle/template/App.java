@@ -16,6 +16,6 @@ public class App {
      */
     public int sum(int a, int b) {
         //Your code here
-        return a + b;
+        return 0;
     }
 }
